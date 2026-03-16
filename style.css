@@ -120,16 +120,16 @@ button:hover {
 
 @media (max-width: 600px) {
     body {
-        /* Garante que o fundo apareça mesmo se o conteúdo for longo */
+        
         min-height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 20px; /* Margem para o fundo aparecer nas bordas */
+        padding: 20px; 
     }
 
     .container {
-        width: 90%; /* O card não ocupa a largura toda, revelando o fundo */
+        width: 90%; 
         padding: 20px;
     }
 }
