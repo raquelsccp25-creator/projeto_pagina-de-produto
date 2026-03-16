@@ -48,6 +48,7 @@ button {
 
 
 
+
 .info-produto {
     display: flex;
     flex-direction: column; 
@@ -115,4 +116,20 @@ button:hover {
     margin: 0;
     position: relative;
     z-index: 10;
+}
+
+@media (max-width: 600px) {
+    body {
+        /* Garante que o fundo apareça mesmo se o conteúdo for longo */
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px; /* Margem para o fundo aparecer nas bordas */
+    }
+
+    .container {
+        width: 90%; /* O card não ocupa a largura toda, revelando o fundo */
+        padding: 20px;
+    }
 }
