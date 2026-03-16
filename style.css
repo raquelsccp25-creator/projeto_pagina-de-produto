@@ -1,0 +1,118 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4; /* cor base inicial */
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+p{
+    font-size: 20px;
+}
+.container {
+    display: flex;
+    flex-direction: column;    /* Empilha os itens um abaixo do outro */
+    align-items: center;       /* Centraliza a imagem e os textos no meio do card */
+    text-align: center;        /* Garante que o texto fique centralizado */
+    gap: 15px;                 /* Espaçamento uniforme entre os elementos */
+    padding: 30px; 
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Sombra para destacar do fundo animado */
+    max-width: 350px;          /* Largura ideal para um card vertical moderno */
+    background-color: #fff; 
+    margin: 0;                 /* O body já está centralizando, então margin 0 é o ideal */
+}
+.imagem img {
+    width: 250px;           /* tamanho da imagem */
+    border-radius: 10px;    /* cantos arredondados da imagem */
+}
+button {
+    background: black;       /* cor do botão */
+    color: white;            /* cor do texto */
+    border: none;            /* remove a borda padrão */
+    padding: 12px 20px;      /* espaço interno do botão */
+    border-radius: 5px;      /* cantos arredondados */
+    cursor: pointer;         /* muda o cursor ao passar o mouse */
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;  /* muda para coluna em telas pequenas */
+        align-items: center;     /* centraliza imagem e info */
+        gap: 20px;               /* espaçamento entre os elementos */
+    }
+}
+
+
+
+.info-produto {
+    display: flex;
+    flex-direction: column; /* Aqui acontece o empilhamento vertical */
+    justify-content: center;
+    gap: 15px;              /* Espaço uniforme entre título, texto, preço e botão */
+    align-items: flex-start; /* Alinha tudo à esquerda (dentro da coluna) */
+}
+
+/* Um ajuste fino no seu botão para ele não ocupar a largura toda (opcional) */
+button {
+    align-self: flex-start; /* Faz o botão respeitar o tamanho do próprio texto */
+    transition: background 0.3s; /* Para um efeito suave no hover */
+}
+
+button:hover {
+    background: #333; /* Muda de cor ao passar o mouse */
+}
+
+/* Criamos uma animação chamada "pulsoTech" */
+@keyframes nebulosa {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.modo-animado {
+    background: linear-gradient(-45deg, #020508, #071a24, #0d1117, #05161d);
+    background-size: 400% 400%;
+    animation: nebulosa 12s ease infinite;
+}
+.preco {
+    color: #2e7d32;        /* Um verde "floresta" profissional e legível */
+    font-size: 24px;
+    font-weight: 800;
+    margin: 15px 0;
+    letter-spacing: -1px;
+    transition: color 0.3s ease;
+}
+
+
+
+/* 1. Animação apenas para o fundo (Background) */
+@keyframes fundoTechLento {
+    0% { background-color: #0d1117; }
+    50% { background-color: #16212e; }
+    100% { background-color: #0d1117; }
+}
+
+.modo-animado {
+    /* Aplicamos a animação apenas ao Body */
+    animation: fundoTechLento 6s ease-in-out infinite;
+    background-image: radial-gradient(rgba(0, 242, 255, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+/* 2. Trava o Card para ele NÃO animar e ficar sólido */
+.container {
+    background-color: #ffffff !important; /* Branco sólido obrigatório */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); /* Sombra mais forte para destacar do fundo dark */
+    max-width: 350px;
+    margin: 0;
+    position: relative; /* Garante que ele fique acima da camada do fundo */
+    z-index: 10;
+}
