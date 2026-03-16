@@ -1,4 +1,4 @@
-body {
+body{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,79 +6,34 @@ body {
     margin: 0;
     background-color: #f4f4f4; 
     transition: background-color 0.4s ease, color 0.4s ease;
+    padding: 20px; 
 }
 
-p{
-    font-size: 20px;
-}
+
 .container {
     display: flex;
-    flex-direction: column;    
-    align-items: center;       
+    flex-direction: column;   
+    align-items: center;      
     text-align: center;       
     gap: 15px;                 
     padding: 30px; 
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
-    max-width: 350px;          
-    background-color: #fff; 
-    margin: 0;                 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); 
+    width: 100%;            
+    max-width: 350px;         
+    background-color: #ffffff !important; 
+    position: relative;
+    z-index: 10;
 }
+p {
+    font-size: 20px;
+}
+
 .imagem img {
     width: 250px;          
     border-radius: 10px; 
 }
-button {
-    background: black;       
-    color: white;            
-    border: none;           
-    padding: 12px 20px;     
-    border-radius: 5px;    
-    cursor: pointer;  
-    
-}
 
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;  
-        align-items: center;     
-        gap: 20px;              
-    }
-}
-
-
-
-
-.info-produto {
-    display: flex;
-    flex-direction: column; 
-    justify-content: center;
-    gap: 15px;              
-    align-items: flex-start; 
-}
-
-
-button {
-    align-self: flex-start; 
-    transition: background 0.3s; 
-}
-
-button:hover {
-    background: #333;
-}
-
-
-@keyframes nebulosa {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.modo-animado {
-    background: linear-gradient(-45deg, #020508, #071a24, #0d1117, #05161d);
-    background-size: 400% 400%;
-    animation: nebulosa 12s ease infinite;
-}
 .preco {
     color: #2e7d32;       
     font-size: 24px;
@@ -89,6 +44,19 @@ button:hover {
 }
 
 
+button {
+    background: black;       
+    color: white;            
+    border: none;           
+    padding: 12px 20px;     
+    border-radius: 5px;    
+    cursor: pointer;  
+    transition: background 0.3s; 
+}
+
+button:hover {
+    background: #333;
+}
 
 
 @keyframes fundoTechLento {
@@ -104,32 +72,34 @@ button:hover {
 }
 
 
-.container {
-    background-color: #ffffff !important; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); 
-    max-width: 350px;
-    margin: 0;
-    position: relative;
-    z-index: 10;
-}
-
 @media (max-width: 600px) {
-    body {
-        
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px; 
-    }
-
     .container {
         width: 90%; 
         padding: 20px;
+        gap: 20px;
     }
+}
+
+
+.info-produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 20px;
+}
+
+
+.botoes-tema {
+    display: flex;
+    flex-direction: row; 
+    gap: 15px;           
+    justify-content: center;
+    width: 100%;
+}
+
+
+.botao-comprar {
+    margin-top: 10px;
+    width: 100%;       
+    max-width: 200px;   
 }
